@@ -217,6 +217,8 @@ console.log(artists[2].bio)
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 artists[9].name = "Vincent Van Gogh";
+
+
 console.log(artists[9].name)
 
 
@@ -231,6 +233,7 @@ console.log(artists[9].name)
 function getArtistByIndex(artists, index) {
   
   index = 0;
+
   return `the artist at index ${artists[index].id} is ${artists[index].name}`
 
 }   
@@ -251,7 +254,7 @@ return [artists[5].name, artists[17].name];
 
 
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
  Use removeArtist to do the following:
  1. Receive an array
  2. Receive a number which is the desired index in the array
@@ -266,6 +269,7 @@ function removeArtist(artist, index){
 
    artists.shift();
    artists.unshift(num)
+
    return artists[index];
 }
    
@@ -314,6 +318,7 @@ For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte
 function lotsOfArt(artists){
   var results = [];
   let num = 100;
+
   for (var i = 0; i < artists.length; i++) {
     if (artists[i].paintings > num) {
       results.push(artists[i].name)
