@@ -208,16 +208,18 @@ Practice accessing data above by console.log-ing following items:
 (no functions needed) */
 
 //(1) Name of the first artist (0th index) in the array
-
+console.log(artists[0].name)
 
 //(2) Bio of the third artist (2nd index) in the array 
-
-
+console.log(artists[2].bio)
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
+artists[9].name = "Vincent Van Gogh";
 
+
+console.log(artists[9].name)
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
@@ -228,9 +230,13 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
  
  Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
-function getArtistByIndex(/*Your Code Here*/) {
-  /*Your Code Here*/
-}  
+function getArtistByIndex(artists, index) {
+  
+  index = 0;
+
+  return `the artist at index ${artists[index].id} is ${artists[index].name}`
+
+}   
 
 
 
@@ -242,13 +248,13 @@ Use get20s to do the following:
 Example born in 1901 and died in 1959 - included -- born in 1889 and died in 1925 not included
 If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/*Your Code Here*/){
-  /*Your Code Here*/
+function get20s(artists){
+return [artists[5].name, artists[17].name];
 }
 
 
 
-/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
+/* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
  Use removeArtist to do the following:
  1. Receive an array
  2. Receive a number which is the desired index in the array
@@ -257,8 +263,14 @@ function get20s(/*Your Code Here*/){
  
  For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/){
-   /*Your Code Here*/
+function removeArtist(artist, index){
+   index = 0
+   let num = 19
+
+   artists.shift();
+   artists.unshift(num)
+
+   return artists[index];
 }
    
 
@@ -278,8 +290,20 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/){
-    /*Your Code Here*/
+function addArtist(artists){
+
+  let index = 20
+  artists.push([{
+
+    id: 20,
+    name: "Vince", 
+    years: "1988 - Present", 
+    genre: "Web Design",
+    nationality: "American" ,
+    bio: "May I please go back to sleep"}]);
+
+    return artists;
+  
   }
 
   
@@ -291,8 +315,18 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/){
-  /*Your Code Here*/
+function lotsOfArt(artists){
+  var results = [];
+  let num = 100;
+
+  for (var i = 0; i < artists.length; i++) {
+    if (artists[i].paintings > num) {
+      results.push(artists[i].name)
+
+  }
+  } 
+console.log (results)
+  return results;
 }
 
 
